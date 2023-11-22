@@ -53,7 +53,7 @@ impl Config {
 
 impl Run for Config {
     fn run(&self) -> Result<(), &'static str> {
-        // match self against Config variants and run task
+        // match self against Config variants and run simulation
         println!("success");
         Ok(())
     }
