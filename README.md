@@ -14,3 +14,5 @@ Please check back soon
 To report bugs/issues, please [submit an issue report](https://github.com/samwyss/waves_rs/issues) using [this template](.github/templates/issue_report.md). To request features, please [submit a pull request](https://github.com/samwyss/waves_rs/pulls) using [this template](./.github/templates/pull_request.md).
  
 All current and future project information is stored in the [waves_rs GitHub repository](https://github.com/samwyss/waves_rs)
+
+## References
