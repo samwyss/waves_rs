@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/crates/l/waves_rs)](https://github.com/samwyss/waves_rs)
 
 ## Purpose
-A cross-platform, high-performance implementation for various electromagnetic solvers
+A cross-platform, high-performance Rust implementation for various electromagnetic solvers
 
 ## How to Use
 Please check back soon
