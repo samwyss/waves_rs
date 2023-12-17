@@ -2,6 +2,7 @@
 //! A cross-platform, high-performance Rust implementation for various electromagnetic solvers
 
 // local module declarations
+mod fdtd1d;
 
 pub trait Run {
     /// allows main.rs to run simulation as outlined in Config
@@ -15,7 +16,7 @@ pub trait Run {
 /// configuration enum, all simulations are given their own variant
 #[derive(Debug, PartialEq, Eq)]
 pub enum Config {
-    // add simulation variants here
+    FDTD1D(fdtd1d::FDTD1D),
 }
 
 impl Config {
@@ -42,8 +43,12 @@ impl Config {
 
         // match an all lowercase task to a set of predefined simulations
         match sim.to_lowercase().as_str() {
-
             // add simulation cases to match against here
+            "fdtd1d" => {
+                let sim = fdtd1d::FDTD1D::new(args)?;
+
+                Ok(Self::FDTD1D(sim))
+            }
 
             // errors if desired simulation is not defined
             _ => return Err("provided task did not match any defined tasks"),
@@ -54,8 +59,9 @@ impl Config {
 impl Run for Config {
     fn run(&self) -> Result<(), &'static str> {
         // match self against Config variants and run simulation
-        println!("success");
-        Ok(())
+        match self {
+            Config::FDTD1D(sim) => sim.run(),
+        }
     }
 }
 
